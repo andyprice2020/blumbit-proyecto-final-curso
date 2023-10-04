@@ -37,7 +37,7 @@ public class Employee {
     @Column(name = "first_name", length = 45)
     private String firstName;
 
-    @Column(length = 10)
+    @Column(length = 30)
     private String title;
 
     @Column(name = "reports_to", length = 80)

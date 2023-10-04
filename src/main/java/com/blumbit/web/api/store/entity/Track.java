@@ -49,7 +49,7 @@ public class Track {
     private Genre genreId;
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.REFRESH})
-    @JoinTable(name = "playlist_tracks",
+    @JoinTable(name = "playlist_tracks", schema = "store",
             joinColumns = @JoinColumn(name = "track_id"),
             inverseJoinColumns = @JoinColumn(name = "playlist_id"))
     private Set<Playlist> playlists = new HashSet<>();

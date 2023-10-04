@@ -1,7 +1,7 @@
 /* Table Artist */
 CREATE TABLE store.artists (
     artist_id uuid PRIMARY KEY DEFAULT uuid_generate_v4() UNIQUE NOT NULL,
-    "name" varchar(80) NULL,
+    "name" varchar(400) NULL,
     enabled bool NOT NULL DEFAULT TRUE,
     created_by_user varchar(50) NOT NULL,
     created_date timestamp NOT NULL,
@@ -14,7 +14,7 @@ CREATE TABLE store.artists (
 CREATE TABLE store.albums (
     album_id uuid PRIMARY KEY DEFAULT uuid_generate_v4() UNIQUE NOT NULL,
     artist_id uuid references store.artists(artist_id),
-    title varchar(80) NULL,
+    title varchar(200) NULL,
     enabled bool NOT NULL DEFAULT TRUE,
     created_by_user varchar(50) NOT NULL,
     created_date timestamp NOT NULL,
@@ -29,7 +29,7 @@ CREATE TABLE store.employees (
     employee_id uuid PRIMARY KEY DEFAULT uuid_generate_v4() UNIQUE NOT NULL,
     last_name varchar(45) NULL,
     first_name varchar(45) NULL,
-    title varchar(10) NULL,
+    title varchar(30) NULL,
     reports_to varchar(80) NULL,
     birth_date timestamp NULL,
     hire_date timestamp NULL,
@@ -159,4 +159,10 @@ CREATE TABLE store.playlists (
     last_modified_by_user varchar(50) NOT NULL,
     last_modified_date timestamp NOT NULL,
     count_modified int8 NULL
+);
+
+/* Table PlaylistTracks*/
+CREATE TABLE store.playlist_tracks(
+    track_id uuid REFERENCES store.tracks(track_id),
+    playlist_id uuid REFERENCES store.playlists(playlist_id)
 );

@@ -34,7 +34,7 @@ public class Album {
     @JoinColumn(name = "artist_id")
     private Artist artistId;
 
-    @Column(length = 80)
+    @Column(length = 200)
     private String title;
 
     private boolean enabled;

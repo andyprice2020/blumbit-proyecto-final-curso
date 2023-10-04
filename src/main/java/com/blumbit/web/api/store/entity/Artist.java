@@ -30,7 +30,7 @@ public class Artist {
     @Column(name = "artist_id", nullable = false, unique = true)
     private UUID artistId;
 
-    @Column(length = 80)
+    @Column(length = 400)
     private String name;
 
     private boolean enabled;
