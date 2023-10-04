@@ -1,4 +1,4 @@
-package com.blumbit.web.api.store.service.impl;
+package com.blumbit.web.api.store.service;
 
 import com.blumbit.web.api.store.dto.TrackDto;
 
