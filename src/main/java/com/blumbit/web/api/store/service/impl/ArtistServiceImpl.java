@@ -5,7 +5,6 @@ import com.blumbit.web.api.store.repository.ArtistRepository;
 import com.blumbit.web.api.store.service.IArtistService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -27,8 +26,8 @@ public class ArtistServiceImpl implements IArtistService {
 
     @Override
     @Transactional(readOnly = true)
-    public Page<Artist> findAll(int initPage, int size, boolean enablePagination) {
-        return artistRepository.findAll(enablePagination ? PageRequest.of(initPage, size): Pageable.unpaged());
+    public Page<Artist> findAll(Pageable pageable) {
+        return artistRepository.findAll(pageable);
     }
 
     @Override
