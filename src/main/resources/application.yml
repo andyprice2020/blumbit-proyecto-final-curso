@@ -13,6 +13,14 @@ spring:
   sql:
     init:
       mode: never
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/blumbit-realm-dev
+          jwk-set-uri: http://localhost:8080/realms/blumbit-realm-dev/protocol/openid-connect/certs
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration
 server:
   port: 9090
 #SWAGGER
@@ -23,10 +31,10 @@ logging:
     console: "%d{dd-MM-yyyy HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"
     file: "%d{dd-MM-yyyy HH:mm:ss.SSS} %p %c{1.} [%t] %m%n"
   level:
+    org.keycloak: ERROR
     org.springframework.web: ERROR
     com.blumbit.web.api.store: DEBUG
     org.hibernate: ERROR
   file:
     name: app-online-store.log
-
-
+# SPRING BOOT KEYCLOAK CONFIGURATION
