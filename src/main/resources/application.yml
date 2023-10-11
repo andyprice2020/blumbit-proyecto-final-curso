@@ -22,7 +22,7 @@ spring:
   autoconfigure:
     exclude: org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration
 server:
-  port: 9090
+  port: 9009
 #SWAGGER
 springdoc:
   packages-to-scan: 'com.blumbit.web.api.store.controller'
