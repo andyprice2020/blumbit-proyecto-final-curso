@@ -26,8 +26,7 @@ import java.util.UUID;
 public class Customer {
 
     @Id
-    @GeneratedValue
-    @UuidGenerator(style = UuidGenerator.Style.TIME)
+    @UuidGenerator
     @Column(name = "customer_id", nullable = false, unique = true)
     private UUID customerId;
 

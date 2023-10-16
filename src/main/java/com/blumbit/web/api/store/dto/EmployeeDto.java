@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 @Data
 public class EmployeeDto {
 
-    private Integer employeeId;
+    private String employeeId;
     private String lastName;
     private String firstName;
     private String title;

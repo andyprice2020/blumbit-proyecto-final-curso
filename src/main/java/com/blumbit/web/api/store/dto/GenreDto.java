@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 @Data
 public class GenreDto {
 
-    private Integer genreId;
+    private String genreId;
     private String name;
     private boolean enabled;
     private String createdByUser;

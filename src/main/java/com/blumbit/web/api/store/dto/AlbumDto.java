@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 @Data
 public class AlbumDto {
 
-    private Integer albumId;
+    private String albumId;
     private Artist artistId;
     private String title;
     private boolean enabled;

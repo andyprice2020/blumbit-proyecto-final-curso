@@ -4,5 +4,5 @@ import com.blumbit.web.api.store.dto.TrackDto;
 
 public interface ITrackService {
 
-    TrackDto getTrackRecord(Integer trackId);
+    TrackDto getTrackRecord(String trackId);
 }

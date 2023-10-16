@@ -25,8 +25,7 @@ import java.util.UUID;
 public class Artist {
 
     @Id
-    @GeneratedValue
-    @UuidGenerator(style = UuidGenerator.Style.TIME)
+    @UuidGenerator
     @Column(name = "artist_id", nullable = false, unique = true)
     private UUID artistId;
 

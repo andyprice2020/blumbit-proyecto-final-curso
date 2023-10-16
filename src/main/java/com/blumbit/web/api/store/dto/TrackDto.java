@@ -13,7 +13,7 @@ import java.util.Set;
 @Data
 public class TrackDto {
 
-    private Integer trackId;
+    private String trackId;
     private String name;
     private Album albumId;
     private MediaType mediaTypeId;

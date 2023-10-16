@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 @Data
 public class InvoiceDto {
 
-    private Integer invoiceId;
+    private String invoiceId;
     private Customer customerId;
     private LocalDateTime invoiceDate;
     private String billingAddress;

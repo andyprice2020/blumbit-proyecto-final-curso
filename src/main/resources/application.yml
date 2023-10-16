@@ -12,29 +12,27 @@ spring:
     generate-ddl: true
   sql:
     init:
-      mode: never
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: http://localhost:8080/realms/blumbit-realm-dev
-          jwk-set-uri: http://localhost:8080/realms/blumbit-realm-dev/protocol/openid-connect/certs
-  autoconfigure:
-    exclude: org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration
+      mode: never # Cambiar este valor a always la primera vez, para que se puedan cargar los datos. Luego, colocar nuevamente el valor never
 server:
-  port: 9009
-#SWAGGER
+  port: 9000
+
+#Swagger
 springdoc:
   packages-to-scan: 'com.blumbit.web.api.store.controller'
+#Logging
 logging:
   pattern:
     console: "%d{dd-MM-yyyy HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"
     file: "%d{dd-MM-yyyy HH:mm:ss.SSS} %p %c{1.} [%t] %m%n"
   level:
-    org.keycloak: ERROR
     org.springframework.web: ERROR
     com.blumbit.web.api.store: DEBUG
     org.hibernate: ERROR
   file:
     name: app-online-store.log
-# SPRING BOOT KEYCLOAK CONFIGURATION
+#Security config
+blumbit:
+  app:
+    jwtSecret: '7En81T01chCDGP7XU0oQjfWrb7nMith1bV0RJCn+7JkgyKa1Jgz7zeQFV9bm8f+EgWGFU0G82UX0jRiTHxw8yScH9vruKMOT6m2AtEr9WRrCK5OMIJfegBBwAw4ezQOLivEmGd3JELMpIVcRAq+JBQtPH3wAUfE+PVfu6iOvKnc7Jbbss4XdarzcUyMRiZPD'
+    jwtExpirationMs: 86400000 # Equivale a 24 Hra/ 1 dia
+

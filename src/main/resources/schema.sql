@@ -166,3 +166,31 @@ CREATE TABLE store.playlist_tracks(
     track_id uuid REFERENCES store.tracks(track_id),
     playlist_id uuid REFERENCES store.playlists(playlist_id)
 );
+
+/* Table Users */
+CREATE TABLE store.users(
+    user_id uuid PRIMARY KEY DEFAULT uuid_generate_v4() UNIQUE NOT NULL,
+    user_name text NOT NULL,
+    email text NOT NULL,
+    password text NOT NULL,
+    enabled boolean NOT NULL DEFAULT TRUE
+);
+
+/* Table Roles */
+CREATE TABLE store.roles(
+    role_id uuid PRIMARY KEY DEFAULT uuid_generate_v4() UNIQUE NOT NULL,
+    name text NOT NULL,
+    enabled boolean NOT NULL DEFAULT TRUE,
+    created_by_user varchar(20) NOT NULL,
+    created_date timestamp NOT NULL,
+    last_modified_by_user varchar(20) NOT NULL,
+    last_modified_date timestamp NOT NULL,
+    count_modified int8 NOT NULL
+);
+
+/* Tabla G_Users_Roles */
+CREATE TABLE store.user_roles(
+    user_id uuid references store.users(user_id),
+    role_id uuid references store.roles(role_id)
+);
+

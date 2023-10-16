@@ -25,8 +25,7 @@ import java.util.UUID;
 public class Playlist {
 
     @Id
-    @GeneratedValue
-    @UuidGenerator(style = UuidGenerator.Style.TIME)
+    @UuidGenerator
     @Column(name = "playlist_id", nullable = false, unique = true)
     private UUID playlistId;
 

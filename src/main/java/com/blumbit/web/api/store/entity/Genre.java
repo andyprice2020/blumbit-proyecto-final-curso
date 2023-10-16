@@ -25,8 +25,7 @@ import java.util.UUID;
 public class Genre {
 
     @Id
-    @GeneratedValue
-    @UuidGenerator(style = UuidGenerator.Style.TIME)
+    @UuidGenerator
     @Column(name = "genre_id",nullable = false, unique = true)
     private UUID genreId;
 

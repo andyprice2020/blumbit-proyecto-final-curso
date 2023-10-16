@@ -25,8 +25,7 @@ import java.util.UUID;
 public class MediaType {
 
     @Id
-    @GeneratedValue
-    @UuidGenerator(style = UuidGenerator.Style.TIME)
+    @UuidGenerator
     @Column(name = "media_type_id", nullable = false, unique = true)
     private UUID mediaTypeId;
 

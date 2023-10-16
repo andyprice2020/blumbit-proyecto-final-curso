@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @Data
 public class InvoiceLineDto {
 
-    private Integer invoiceLineId;
+    private String invoiceLineId;
     private Invoice invoiceId;
     private Track trackId;
     private BigDecimal unitPrice;

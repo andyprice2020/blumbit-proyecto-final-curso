@@ -26,8 +26,7 @@ import java.util.UUID;
 public class Invoice {
 
     @Id
-    @GeneratedValue
-    @UuidGenerator(style = UuidGenerator.Style.TIME)
+    @UuidGenerator
     @Column(name = "invoice_id", nullable = false, unique = true)
     private UUID invoiceId;
 

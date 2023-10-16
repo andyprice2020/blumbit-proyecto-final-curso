@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 @Data
 public class MediaTypeDto {
 
-    private Integer mediaTypeId;
+    private String mediaTypeId;
     private String name;
     private boolean enabled;
     private String createdByUser;

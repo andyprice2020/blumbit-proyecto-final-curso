@@ -28,8 +28,7 @@ import java.util.UUID;
 public class Track {
 
     @Id
-    @GeneratedValue
-    @UuidGenerator(style = UuidGenerator.Style.TIME)
+    @UuidGenerator
     @Column(name = "track_id", nullable = false, unique = true)
     private UUID trackId;
 
