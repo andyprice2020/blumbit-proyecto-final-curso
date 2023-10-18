@@ -42,6 +42,7 @@ public class ArtistController {
         }
     }
     @GetMapping("/artists/pageable")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('USER')")
     public ResponseEntity<Page<Artist>> getPageableArtists(@RequestParam(required = false, defaultValue = "0") Integer page,
                                                            @RequestParam(required = false, defaultValue = "10") Integer size,
                                                            @RequestParam(required = false, defaultValue = "name") String order,
